@@ -1,0 +1,12 @@
+D:\Source\OptimizationMethods\Methods\Methods\obj\Debug\Methods.csprojAssemblyReference.cache
+D:\Source\OptimizationMethods\Methods\Methods\obj\Debug\Methods.csproj.CoreCompileInputs.cache
+D:\Source\OptimizationMethods\Methods\Methods\bin\Debug\x64\libiomp5md.dll
+D:\Source\OptimizationMethods\Methods\Methods\bin\Debug\x64\MathNet.Numerics.MKL.dll
+D:\Source\OptimizationMethods\Methods\Methods\bin\Debug\Methods.exe.config
+D:\Source\OptimizationMethods\Methods\Methods\bin\Debug\Methods.exe
+D:\Source\OptimizationMethods\Methods\Methods\bin\Debug\Methods.pdb
+D:\Source\OptimizationMethods\Methods\Methods\bin\Debug\MathNet.Numerics.dll
+D:\Source\OptimizationMethods\Methods\Methods\bin\Debug\MathNet.Numerics.xml
+D:\Source\OptimizationMethods\Methods\Methods\obj\Debug\Methods.csproj.CopyComplete
+D:\Source\OptimizationMethods\Methods\Methods\obj\Debug\Methods.exe
+D:\Source\OptimizationMethods\Methods\Methods\obj\Debug\Methods.pdb
