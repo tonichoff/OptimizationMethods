@@ -10,3 +10,5 @@ D:\Source\OptimizationMethods\Methods\Methods\bin\Debug\MathNet.Numerics.xml
 D:\Source\OptimizationMethods\Methods\Methods\obj\Debug\Methods.csproj.CopyComplete
 D:\Source\OptimizationMethods\Methods\Methods\obj\Debug\Methods.exe
 D:\Source\OptimizationMethods\Methods\Methods\obj\Debug\Methods.pdb
+D:\Source\Methods\obj\Debug\Methods.exe
+D:\Source\Methods\obj\Debug\Methods.pdb
