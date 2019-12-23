@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace SimplexMethod
 {
-    // https://vscode.ru/prog-lessons/simpleks-metod-realizatsiya.htmls
+    // Ref: https://vscode.ru/prog-lessons/simpleks-metod-realizatsiya.htmls
     class SimplexMethod
     {
         double[,] table;
@@ -19,9 +19,9 @@ namespace SimplexMethod
             n = sourceTable.GetLength(1);
             table = new double[m, n + m - 1];
             basis = new List<int>();
-            for (int i = 0; i < m; ++i)
+            for (var i = 0; i < m; ++i)
             {
-                for (int j = 0; j < table.GetLength(1); ++j)
+                for (var j = 0; j < table.GetLength(1); ++j)
                 {
                     if (j < n)
                     {
@@ -43,33 +43,34 @@ namespace SimplexMethod
 
         public double[,] Calculate(double[] result)
         {
-            int mainCol, mainRow;
+            var mainCol = 0;
+            var mainRow = 0;
             while (!IsItEnd())
             {
                 mainCol = FindMainCol();
                 mainRow = FindMainRow(mainCol);
                 basis[mainRow] = mainCol;
-                double[,] newTable = new double[m, n];
-                for (int j = 0; j < n; ++j)
+                var newTable = new double[m, n];
+                for (var j = 0; j < n; ++j)
                 {
                     newTable[mainRow, j] = table[mainRow, j] / table[mainRow, mainCol];
                 }
-                for (int i = 0; i < m; ++i)
+                for (var i = 0; i < m; ++i)
                 {
                     if (i == mainRow)
                     {
                         continue;
                     }
-                    for (int j = 0; j < n; ++j)
+                    for (var j = 0; j < n; ++j)
                     {
                         newTable[i, j] = table[i, j] - table[i, mainCol] * newTable[mainRow, j];
                     }
                 }
                 table = newTable;
             }
-            for (int i = 0; i < result.Length; ++i)
+            for (var i = 0; i < result.Length; ++i)
             {
-                int k = basis.IndexOf(i + 1);
+                var k = basis.IndexOf(i + 1);
                 result[i] = (k != -1) ? table[k, 0] : 0;
             }
             return table;
@@ -77,8 +78,8 @@ namespace SimplexMethod
 
         private bool IsItEnd()
         {
-            bool flag = true;
-            for (int j = 1; j < n; ++j)
+            var flag = true;
+            for (var j = 1; j < n; ++j)
             {
                 if (table[m - 1, j] < 0)
                 {
@@ -91,8 +92,8 @@ namespace SimplexMethod
 
         private int FindMainCol()
         {
-            int mainCol = 1;
-            for (int j = 2; j < n; ++j)
+            var mainCol = 1;
+            for (var j = 2; j < n; ++j)
             {
                 if (table[m - 1, j] < table[m - 1, mainCol])
                 {
@@ -104,8 +105,8 @@ namespace SimplexMethod
 
         private int FindMainRow(int mainCol)
         {
-            int mainRow = 0;
-            for (int i = 0; i < m - 1; ++i)
+            var mainRow = 0;
+            for (var i = 0; i < m - 1; ++i)
             {
                 if (table[i, mainCol] > 0)
                 {
@@ -113,7 +114,7 @@ namespace SimplexMethod
                     break;
                 }
             }
-            for (int i = mainRow + 1; i < m - 1; ++i)
+            for (var i = mainRow + 1; i < m - 1; ++i)
             {
                 if ((table[i, mainCol] > 0) && ((table[i, 0] / table[i, mainCol]) < (table[mainRow, 0] / table[mainRow, mainCol])))
                 {
