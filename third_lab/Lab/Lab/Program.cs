@@ -2,7 +2,7 @@
 using MathNet.Numerics;
 using MathNet.Numerics.LinearAlgebra;
 
-namespace SecondLab
+namespace Lab
 {
     class Program
     {
@@ -37,15 +37,15 @@ namespace SecondLab
             {
                 DefineRandom(deminsion, out A, out b);
             }
-            else 
+            else
             {
                 Define(deminsion, out A, out b);
             }
             var random = new Random();
-            var c = Vector<double>.Build.Random(deminsion);
-            var d = random.Next(1, 100) + random.NextDouble();
-            var x0 = (-1) * A.Inverse() * b;
-            var f = x0.DotProduct(c) + d;
+            var x0 = Vector<double>.Build.Random(deminsion);
+            var r = random.Next(2, 100) / 10;
+            var x = (-1) * A.Inverse() * b;
+            var f = (x - x0).L2Norm() - r;
             if (f <= 0)
             {
                 Console.WriteLine("f(x0) <= 0");
@@ -53,8 +53,8 @@ namespace SecondLab
             }
             else
             {
-                var y = (d - c.ToRowMatrix() * A.Inverse() * b) / (c.ToRowMatrix() * A.Inverse() * c);
-                var x = (-1) * A.Inverse() * (b + y[0] * c);
+                //var y = (d - c.ToRowMatrix() * A.Inverse() * b) / (c.ToRowMatrix() * A.Inverse() * c);
+                //var x = (-1) * A.Inverse() * (b + y[0] * c);
                 Console.WriteLine(x);
             }
             Console.WriteLine("Press any key to exit");
@@ -62,3 +62,4 @@ namespace SecondLab
         }
     }
 }
+
